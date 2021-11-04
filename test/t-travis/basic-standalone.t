@@ -98,38 +98,38 @@ NGX_EXPORT_S_S (urlDecode)
     ';
 --- config
     location /toUpper {
-        haskell_run toUpper $hs_a $arg_a;
+        > toUpper $hs_a $arg_a;
         echo "toUpper ($arg_a) = $hs_a";
     }
     location /takeN {
-        haskell_run takeN $hs_a $arg_b $arg_a;
+        > takeN $hs_a $arg_b $arg_a;
         echo "takeN ($arg_a, $arg_b) = $hs_a";
     }
     location /reverse {
-        haskell_run reverse $hs_a $arg_a;
+        > reverse $hs_a $arg_a;
         echo "reverse ($arg_a) = $hs_a";
     }
     location /matches {
-        haskell_run matches $hs_a $arg_b $arg_a;
-        haskell_run urlDecode $hs_b $arg_a;
+        > matches $hs_a $arg_b $arg_a;
+        > urlDecode $hs_b $arg_a;
         echo "matches ($arg_b, $hs_b) = $hs_a";
     }
     location /firstNotEmpty {
-        haskell_run firstNotEmpty $hs_a $arg_b $arg_c $arg_a;
+        > firstNotEmpty $hs_a $arg_b $arg_c $arg_a;
         echo "firstNotEmpty ($arg_b, $arg_c, $arg_a) = $hs_a";
     }
     location /isInList {
-        haskell_run isInList $hs_a $arg_a secret1 secret2 secret3;
+        > isInList $hs_a $arg_a secret1 secret2 secret3;
         echo "isInList ($arg_a, <secret words>) = $hs_a";
     }
     location /isJSONListOfInts {
-        haskell_run isJSONListOfInts $hs_a $arg_a;
-        haskell_run urlDecode $hs_b $arg_a;
+        > isJSONListOfInts $hs_a $arg_a;
+        > urlDecode $hs_b $arg_a;
         echo "isJSONListOfInts ($hs_b) = $hs_a";
     }
     location /jSONListOfIntsTakeN {
-        haskell_run jSONListOfIntsTakeN $hs_a $arg_take|$arg_a;
-        haskell_run urlDecode $hs_b $arg_a;
+        > jSONListOfIntsTakeN $hs_a $arg_take|$arg_a;
+        > urlDecode $hs_b $arg_a;
         echo "jSONListOfIntsTakeN ($hs_b, $arg_take) = $hs_a";
     }
 --- request
