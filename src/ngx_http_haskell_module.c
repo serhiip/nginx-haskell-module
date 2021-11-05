@@ -115,12 +115,12 @@ static ngx_command_t  ngx_http_haskell_module_commands[] = {
       NGX_HTTP_LOC_CONF_OFFSET,
       0,
       NULL },
-    { ngx_string(">"),
-      NGX_HTTP_SRV_CONF|NGX_HTTP_LOC_CONF|NGX_HTTP_LIF_CONF|NGX_CONF_ANY,
-      ngx_http_haskell_run,
-      NGX_HTTP_LOC_CONF_OFFSET,
-      0,
-      NULL },
+    /* { ngx_string(">"), */
+    /*   NGX_HTTP_SRV_CONF|NGX_HTTP_LOC_CONF|NGX_HTTP_LIF_CONF|NGX_CONF_ANY, */
+    /*   ngx_http_haskell_run, */
+    /*   NGX_HTTP_LOC_CONF_OFFSET, */
+    /*   0, */
+    /*   NULL }, */
     { ngx_string("haskell_run_async"),
       NGX_HTTP_SRV_CONF|NGX_HTTP_LOC_CONF|NGX_HTTP_LIF_CONF|NGX_CONF_ANY,
       ngx_http_haskell_run,
